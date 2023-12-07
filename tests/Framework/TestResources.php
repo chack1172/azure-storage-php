@@ -1715,7 +1715,7 @@ DataServiceVersion: 1.0;
 
     public static function getTableSampleBody()
     {
-        return '<?xml version="1.0" encoding="utf-8"?><entry xml:base="https://phput.table.core.windows.net/" xmlns="http://www.w3.org/2005/Atom" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"><id>https://phput.table.core.windows.net/Tables(\'gettable\')</id><category term="phput.Tables" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" /><link rel="edit" title="Tables" href="Tables(\'gettable\')" /><title /><updated>2017-02-16T03:48:16Z</updated><author><name /></author><content type="application/xml"><m:properties><d:TableName>gettable</d:TableName></m:properties></content></entry>';
+        return '{"TableName": "gettable"}';
     }
 
     public static function getInsertEntitySampleBody()
