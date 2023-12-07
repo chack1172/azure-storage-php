@@ -71,7 +71,7 @@ class TableRestProxyTest extends TableServiceRestProxyTestBase
 
         // Setup
         $xml = TestResources::setServicePropertiesSample();
-        $xml['HourMetrics']['RetentionPolicy'] = null;
+        unset($xml['HourMetrics']);
         $expected = ServiceProperties::create($xml);
 
         // Test
