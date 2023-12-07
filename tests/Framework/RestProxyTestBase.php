@@ -47,6 +47,9 @@ class RestProxyTestBase extends \PHPUnit\Framework\TestCase
 
     public function __construct()
     {
+        if (method_exists(get_parent_class(), '__construct')) {
+            parent::__construct(...func_get_args());
+        }
         $this->xmlSerializer = new XmlSerializer();
         Logger::setLogFile('C:\log.txt');
 
