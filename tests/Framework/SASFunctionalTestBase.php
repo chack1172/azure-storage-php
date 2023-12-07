@@ -301,6 +301,6 @@ class SASFunctionalTestBase extends \PHPUnit\Framework\TestCase
         } catch (ServiceException $e) {
             $message = $e->getMessage();
         }
-        self::assertContains($errorMsg, $message, $failureMessage);
+        self::assertStringContainsString($errorMsg, $message, $failureMessage);
     }
 }

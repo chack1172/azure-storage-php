@@ -1668,8 +1668,8 @@ class FileServiceFunctionalTest extends FunctionalTestBase
             } catch (ServiceException $e) {
                 $message = $e->getMessage();
             }
-            self::assertContains('400', $message);
-            self::assertContains(
+            self::assertStringContainsString('400', $message);
+            self::assertStringContainsString(
                 'The MD5 value specified in the request did not match with the MD5 value calculated by the server.',
                 $message
             );
@@ -1756,7 +1756,7 @@ class FileServiceFunctionalTest extends FunctionalTestBase
         if ($error == '') {
             self::assertEquals($error, $message);
         } else {
-            self::assertContains($error, $message);
+            self::assertStringContainsString($error, $message);
         }
     }
 

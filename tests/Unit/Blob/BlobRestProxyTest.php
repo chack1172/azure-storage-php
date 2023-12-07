@@ -1649,7 +1649,7 @@ class BlobRestProxyTest extends BlobServiceRestProxyTestBase
             $this->restProxy->abortCopy($destinationContainerName, $destinationBlobName, $copyId);
         } catch (ServiceException $e) {
             self::assertEquals(409, $e->getCode());
-            self::assertContains('There is currently no pending copy operation.', $e->getErrorText());
+            self::assertStringContainsString('There is currently no pending copy operation.', $e->getErrorText());
         }
     }
 
