@@ -33,7 +33,7 @@ class Validate
     {
         try {
             (string) $var;
-        } catch (\Exception $e) {
+        } catch (\Throwable $e) {
             throw new InvalidArgumentTypeException(gettype(''), $name);
         }
     }
@@ -47,7 +47,9 @@ class Validate
      */
     public static function isBoolean($var)
     {
-        (bool) $var;
+        if (!is_bool($var)) {
+            throw new InvalidArgumentTypeException(gettype(true));
+        }
     }
 
     /**
@@ -92,9 +94,7 @@ class Validate
      */
     public static function isInteger($var, $name)
     {
-        try {
-            (int) $var;
-        } catch (\Exception $e) {
+        if (!is_int($var)) {
             throw new InvalidArgumentTypeException(gettype(123), $name);
         }
     }
@@ -110,7 +110,7 @@ class Validate
     {
         try {
             (string) $var;
-        } catch (\Exception $e) {
+        } catch (\Throwable $e) {
             return false;
         }
 
