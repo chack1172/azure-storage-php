@@ -134,10 +134,10 @@ class RetryMiddlewareFactory
 
             if (!$response) {
                 if (!$exception || !($exception instanceof RequestException)) {
+                    if ($exception instanceof ConnectException) {
+                        return $retryConnect;
+                    }
                     return false;
-                }
-                if ($exception instanceof ConnectException) {
-                    return $retryConnect;
                 }
                 $response = $exception->getResponse();
                 if (!$response) {
