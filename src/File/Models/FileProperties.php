@@ -48,7 +48,7 @@ class FileProperties
         );
 
         $result->setContentLength(
-            Utilities::tryGetValue($parsed, Resources::CONTENT_LENGTH)
+            (int) Utilities::tryGetValue($parsed, Resources::CONTENT_LENGTH)
         );
 
         $result->setContentType(

@@ -33,7 +33,7 @@ class SetBlobPropertiesResult
             Resources::ETAG,
             $headers
         ));
-        $result->setSequenceNumber(Utilities::tryGetValueInsensitive(
+        $result->setSequenceNumber((int) Utilities::tryGetValueInsensitive(
             Resources::X_MS_BLOB_SEQUENCE_NUMBER,
             $headers
         ));
