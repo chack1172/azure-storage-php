@@ -101,7 +101,7 @@ class ServiceExceptionTest extends \PHPUnit\Framework\TestCase
     public function testNoWarningForNonXmlErrorMessage()
     {
         // Warnings are silenced in parseErrorMessage once they are converted to exceptions
-        \PHPUnit\Framework\Error\Warning::$enabled = false;
+        // \PHPUnit\Framework\Error\Warning::$enabled = false;
 
         // Setup
         $response = TestResources::getFailedResponseJson(210, 'test info');

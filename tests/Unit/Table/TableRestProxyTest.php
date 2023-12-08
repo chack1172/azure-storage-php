@@ -70,12 +70,14 @@ class TableRestProxyTest extends TableServiceRestProxyTestBase
         $this->skipIfEmulated();
 
         // Setup
+        $current = $this->restProxy->getServiceProperties();
         $xml = TestResources::setServicePropertiesSample();
         unset($xml['HourMetrics']);
         $expected = ServiceProperties::create($xml);
 
         // Test
         $this->setServiceProperties($expected);
+        $expected->setHourMetrics($current->getValue()->getHourMetrics());
         //Add 30s interval to wait for setting to take effect.
         \sleep(30);
         $actual = $this->restProxy->getServiceProperties();
