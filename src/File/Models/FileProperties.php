@@ -437,11 +437,10 @@ class FileProperties
     /**
      * Sets file copySource.
      *
-     * @param int $copySource value.
+     * @param string $copySource value.
      */
     protected function setCopySource($copySource)
     {
-        Validate::isInteger($copySource, 'copySource');
         $this->copySource = $copySource;
     }
 
